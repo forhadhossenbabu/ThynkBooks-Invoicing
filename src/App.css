@@ -1,6 +1,6 @@
 a {
   text-decoration: none !important;
-  color: #fff;
+  color: #fff !important;
 }
 h3,
 h4 {
@@ -22,6 +22,7 @@ h4 {
 }
 .btn-orange:hover {
   color: white;
+  background: #320477;
 }
 .navbar {
   padding: 0;
