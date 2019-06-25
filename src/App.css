@@ -1,10 +1,19 @@
+body {
+  margin: 0;
+  font-family: "Didact Gothic", sans-serif;
+}
+
 a {
   text-decoration: none !important;
   color: #fff !important;
 }
+p {
+  margin-bottom: 3px;
+}
 h3,
 h4 {
   font-weight: 300;
+  font-family: "Questrial", sans-serif;
 }
 
 .btn-orange {
@@ -36,4 +45,37 @@ h4 {
   line-height: inherit;
   white-space: nowrap;
   font-weight: 300;
+  color: #be94ff;
+}
+
+.btn-outline-success {
+  border: 2px solid #6b37b9;
+}
+.btn-outline-success:hover {
+  background: #6b37b9;
+  border: 2px solid #6b37b9;
+}
+
+.nav-fluid {
+  background: aquamarine;
+}
+p.foo {
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.col-right {
+  text-align: -webkit-right;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 5px solid #6c3ab9;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.table td,
+.table th {
+  padding: 5px 0;
+  vertical-align: top;
+  border-top: none;
 }

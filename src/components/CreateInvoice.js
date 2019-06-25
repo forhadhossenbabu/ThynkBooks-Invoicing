@@ -57,71 +57,84 @@ class CreateInvoice extends React.Component {
     const { errors } = this.state;
 
     return (
-      <div className="container mt-4">
-        <h3 className="pb-4">Create New Invoice</h3>
-        <form onSubmit={this.handleSubmit}>
-          <div className="d-flex justify-content-between row-hl">
-            <div className="row">
-              <div className="col-md-3 ma">
-                <label>Name</label>
-                <input
-                  type="name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                {errors.name && (
-                  <small className="text-danger">{errors.name}</small>
-                )}
-              </div>
-              <div className="col-md-3 ma">
-                <label>Quantity</label>
-                <input
-                  type="text"
-                  name="quantity"
-                  value={this.state.quantity}
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                {errors.quantity && (
-                  <small className="text-danger">{errors.quantity}</small>
-                )}
-              </div>
-              <div className="col-md-3">
-                <label>Currency</label>
-                <select
-                  className="form-control"
-                  value={this.state.currency}
-                  onChange={this.handleChange}
-                  name="currency"
-                >
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                  <option value="INR">INR</option>
-                </select>
-              </div>
-              <div className="col-md-3 ma">
-                <label>Price</label>
-                <input
-                  type="number"
-                  name="price"
-                  value={this.state.price}
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                {errors.price && (
-                  <small className="text-danger">{errors.price}</small>
-                )}
+      <div>
+        <nav className="navbar navbar-expand-sm bg-dark sticky-top">
+          <div className="container">
+            <p className="navbar-brand">Add New Item</p>
+          </div>
+        </nav>
+
+        <div className="container mt-2">
+          <form onSubmit={this.handleSubmit}>
+            <div className="d-flex justify-content-between row-hl">
+              <div className="row">
+                <div className="col-md-3 ma">
+                  <label>Name</label>
+                  <input
+                    type="name"
+                    name="name"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                    className="form-control"
+                  />
+                  {errors.name && (
+                    <small className="text-danger">{errors.name}</small>
+                  )}
+                </div>
+                <div className="col-md-3 ma">
+                  <label>Quantity</label>
+                  <input
+                    type="text"
+                    name="quantity"
+                    value={this.state.quantity}
+                    onChange={this.handleChange}
+                    className="form-control"
+                  />
+                  {errors.quantity && (
+                    <small className="text-danger">{errors.quantity}</small>
+                  )}
+                </div>
+                <div className="col-md-3">
+                  <label>Currency</label>
+                  <select
+                    className="form-control"
+                    value={this.state.currency}
+                    onChange={this.handleChange}
+                    name="currency"
+                  >
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="INR">INR</option>
+                  </select>
+                </div>
+                <div className="col-md-3 ma">
+                  <label>Price</label>
+                  <input
+                    type="number"
+                    name="price"
+                    value={this.state.price}
+                    onChange={this.handleChange}
+                    className="form-control"
+                  />
+                  {errors.price && (
+                    <small className="text-danger">{errors.price}</small>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <input type="submit" className="btn-orange" value="Add New Invoice" />
-          <Link to="/" className="btn-orange mt-4 ml-5">
-            Back to Invoice
-          </Link>
-        </form>
+            <div className="mt-3">
+              <input
+                type="submit"
+                className="btn btn-success"
+                value="Add New Invoice"
+              />
+              <Link to="/" className="btn btn-danger ml-4">
+                Cancel
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
