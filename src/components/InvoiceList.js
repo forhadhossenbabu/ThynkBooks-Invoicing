@@ -12,7 +12,7 @@ class InvoiceList extends React.Component {
     const { invoice } = this.state;
     if (invoice.invoices) {
       return (
-        <table class="table table-bordered">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -38,7 +38,18 @@ class InvoiceList extends React.Component {
     } else {
       return (
         <div>
-          <h3 className="text-danger">Invoice Not Found</h3>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Invoice Name</th>
+                <th>Quantity</th>
+                <th>Currency</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+          </table>
+          <h3 className="text-danger mt-4 text-center">Invoice Not Found</h3>
         </div>
       );
     }
