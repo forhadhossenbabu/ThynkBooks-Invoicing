@@ -25,7 +25,7 @@ class Invoice extends React.Component {
 
     const dataToSubmit = {
       email,
-      invoices: this.state.invoice.invoices
+      invoices: this.props.invoice.invoices
     };
     console.log(dataToSubmit);
     alert(dataToSubmit);
