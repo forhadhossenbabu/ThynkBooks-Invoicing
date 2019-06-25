@@ -2,6 +2,11 @@ a {
   text-decoration: none !important;
   color: #fff;
 }
+h3,
+h4 {
+  font-weight: 300;
+}
+
 .btn-orange {
   margin: 0 0 0 0px;
   padding: 9px 18px;
@@ -26,12 +31,11 @@ a {
   padding-top: 0;
   padding-bottom: 0;
   margin-right: 0;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: inherit;
   white-space: nowrap;
+  font-weight: 300;
 }
-input[type="submit" i] {
-  border-width: 0 !important;
-  border-style: none;
-  border-color: #fff;
+input:focus-within {
+  background: #6b37b9 !important;
 }

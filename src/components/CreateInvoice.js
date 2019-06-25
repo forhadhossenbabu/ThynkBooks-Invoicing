@@ -58,7 +58,7 @@ class CreateInvoice extends React.Component {
 
     return (
       <div className="container mt-4">
-        <h3 className="display-4 pb-4">Create New Invoice</h3>
+        <h3 className="pb-4">Create New Invoice</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="d-flex justify-content-between row-hl">
             <div className="row">

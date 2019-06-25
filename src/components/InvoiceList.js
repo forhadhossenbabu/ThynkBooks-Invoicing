@@ -100,7 +100,7 @@ class InvoiceList extends React.Component {
   render() {
     return (
       <div className="mt-5">
-        <h4 className="display-4">Invoice List</h4>
+        <h3>Invoice List</h3>
         {this.renderInvoiceList()}
       </div>
     );
