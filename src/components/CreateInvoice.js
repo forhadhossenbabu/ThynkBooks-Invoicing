@@ -117,6 +117,7 @@ class CreateInvoice extends React.Component {
                     onChange={this.handleChange}
                     className="form-control"
                   />
+                  <br />
                   {errors.price && (
                     <small className="text-danger">{errors.price}</small>
                   )}
@@ -124,12 +125,8 @@ class CreateInvoice extends React.Component {
               </div>
             </div>
             <div className="mt-3">
-              <input
-                type="submit"
-                className="btn btn-success"
-                value="Add New Invoice"
-              />
-              <Link to="/" className="btn btn-danger ml-4">
+              <input type="submit" className="my-btn" value="Add New Invoice" />
+              <Link to="/" className="my-btn ml-4">
                 Cancel
               </Link>
             </div>

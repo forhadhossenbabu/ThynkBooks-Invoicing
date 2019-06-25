@@ -5,7 +5,32 @@ import { Link } from "react-router-dom";
 import InvoiceList from "./InvoiceList";
 
 class Invoice extends React.Component {
+  state = {
+    email: "",
+    errors: {}
+  };
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value, errors: {} });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { email, errors } = this.state;
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(email)) {
+      errors.email = "A valid Email is required";
+      return this.setState({ errors });
+    }
+
+    const dataToSubmit = {
+      email
+    };
+    console.log(dataToSubmit);
+  };
+
   render() {
+    const { email, errors } = this.state;
     return (
       <div>
         <nav className="navbar navbar-expand-sm bg-dark sticky-top">
@@ -39,7 +64,7 @@ class Invoice extends React.Component {
               <p className="bar"> Tax ID: 123-456-789</p>
             </div>
             <div className="col-md-6 col-right">
-              <p className="display-4" style={{ color: "#6c3ab9" }}>
+              <p className="display-4" style={{ color: "#1808d2" }}>
                 Invoice
               </p>
               <p className="foo">#First Invoice</p>
@@ -60,6 +85,32 @@ class Invoice extends React.Component {
           </div>
 
           <InvoiceList />
+          {this.props.invoice.invoices.length > 0 && (
+            <div className="mt-5">
+              <form onSubmit={this.handleSubmit}>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <strong>Bill To</strong>
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={this.handleChange}
+                    value={email}
+                    className="form-control"
+                  />
+                </div>
+                {errors.email && (
+                  <small className="text-danger">{errors.email}</small>
+                )}
+                <br />
+
+                <button className="my-btn mb-5 mt-2">Send Invoice</button>
+              </form>
+            </div>
+          )}
         </div>
       </div>
     );
