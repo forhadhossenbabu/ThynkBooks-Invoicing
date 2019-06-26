@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeInvoice } from "../actions/invoiceActions";
 
@@ -7,6 +8,12 @@ class InvoiceList extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.invoice) {
       this.setState({ invoice: nextProps.invoice });
+    }
+  }
+  componentDidMount() {
+    if (this.props.invoice.invoices.length === 0) {
+      // return this.props.history.push("/");
+      console.log(this.props);
     }
   }
 
@@ -76,4 +83,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { removeInvoice }
-)(InvoiceList);
+)(withRouter(InvoiceList));
