@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeInvoice } from "../actions/invoiceActions";
 
@@ -10,12 +10,6 @@ class InvoiceList extends React.Component {
       this.setState({ invoice: nextProps.invoice });
     }
   }
-  componentDidMount() {
-    if (this.props.invoice.invoices.length === 0) {
-      // return this.props.history.push("/");
-      console.log(this.props);
-    }
-  }
 
   removeInvoice = id => this.props.removeInvoice(id);
 
@@ -23,24 +17,36 @@ class InvoiceList extends React.Component {
     const { invoice } = this.props;
     if (invoice.invoices.length > 0)
       return (
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th />
-            </tr>
-          </thead>
-          <tbody>
-            {invoice.invoices.map((invoice, i) => (
-              <tr key={i}>
-                <th scope="row">{i + 1}</th>
-                <td>{invoice.name}</td>
-                <td>{invoice.price}</td>
-                <td>{invoice.quantity}</td>
-                <td>
+        <div className="mt-3 mb-3">
+          <h4 className="invoices">Total Item Added</h4>
+          <div className="user-table-header">
+            <div className="row">
+              <div className="col-md">
+                <span>No</span>
+              </div>
+              <div className="col-md-3">
+                <span>Name</span>
+              </div>
+              <div className="col-md">
+                <span>Price</span>
+              </div>
+              <div className="col-md">
+                <span>Quantity</span>
+              </div>
+              <div className="col-md">
+                <span>Remove</span>
+              </div>
+            </div>
+          </div>
+          {invoice.invoices.map((invoice, i) => (
+            <div className="user-table-item">
+              <div className="row">
+                <div className="col-md">{i + 1}</div>
+                <div className="col-md-3">{invoice.name}</div>
+                <div className="col-md">{invoice.price}</div>
+
+                <div className="col-md">{invoice.quantity}</div>
+                <div className="col-md">
                   <a
                     href="#!"
                     className="text-danger"
@@ -48,26 +54,18 @@ class InvoiceList extends React.Component {
                   >
                     Remove
                   </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       );
     else
       return (
         <div>
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-              </tr>
-            </thead>
-          </table>
-          <h3 className="text-danger mt-4 text-center">Item Not Added Yet.</h3>
+          <div className="mt-3">
+            <h4 className="invoicesx">Item Not Available</h4>
+          </div>
         </div>
       );
   };
@@ -83,4 +81,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { removeInvoice }
-)(withRouter(InvoiceList));
+)(InvoiceList);

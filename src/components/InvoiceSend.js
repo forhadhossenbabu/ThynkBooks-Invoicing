@@ -27,8 +27,7 @@ class InvoicePrepend extends React.Component {
       email,
       invoices: this.props.invoice.invoices
     };
-    console.log(dataToSubmit);
-    alert(dataToSubmit);
+    alert("Needs API endpoint");
   };
 
   componentDidMount() {
@@ -40,7 +39,7 @@ class InvoicePrepend extends React.Component {
     const { email, errors } = this.state;
 
     return (
-      <div className="container mt-1">
+      <div className="container mt-1 mb-4">
         <img
           src="https://abeon-hosting.com/images/red-hibiscus-flower-clipart-3.jpg"
           width="80"
@@ -66,16 +65,7 @@ class InvoicePrepend extends React.Component {
             <p className="bar">(Payment 60 Days After Invoice Date)</p>
           </div>
         </div>
-        <div className="row mt-1">
-          <div className="col-md-6 ">
-            <p className="foo">Billed To</p>
-            <p className="bar">Apple Inc.</p>
-            <p className="bar">Tim Cook</p>
-            <p className="bar">tim@apple.com</p>
-            <p className="bar">1-234-567-890</p>
-          </div>
-          <div className="col-md-6" />
-        </div>
+
         <InvoiceList />
         {this.props.invoice.invoices.length > 0 && (
           <div className="mt-5">
@@ -99,11 +89,11 @@ class InvoicePrepend extends React.Component {
                   <small className="text-danger">{errors.email}</small>
                 )}
               </p>
-              <button className="my-btn mb-2" type="submit">
+              <a className="btn-my" href="#!" onClick={this.handleSubmit}>
                 Send Invoice
-              </button>
+              </a>
             </form>
-            <Link to="/createinvoice" className="my-btn">
+            <Link to="/createinvoice" className="btn-my">
               Add More Item
             </Link>
           </div>

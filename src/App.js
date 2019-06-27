@@ -4,7 +4,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Invoice from "./components/Invoice";
+import Invoices from "./components/Invoices";
 import CreateInvoice from "./components/CreateInvoice";
 import InvoicePrepend from "./components/InvoiceSend";
 
@@ -14,7 +14,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <Router>
-          <Route exact path="/" component={Invoice} />
+          <Route exact path="/" component={Invoices} />
           <Route exact path="/createinvoice" component={CreateInvoice} />
           <Route exact path="/sendinvoice" component={InvoicePrepend} />
         </Router>

@@ -1,4 +1,72 @@
 body {
   margin: 0;
   font-family: "Didact Gothic", sans-serif;
+  background: #f9fbfc;
+}
+h4.invoices {
+  border-bottom: 3px solid #5fcbc6;
+  width: 8rem;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  padding: 9px 0;
+  font-weight: 500;
+}
+h3.billed {
+  font-weight: 600;
+}
+h3.billed span {
+  border-bottom: 3px solid #5fcbc6;
+  padding-bottom: 2px;
+  margin-right: 8px;
+}
+/* linear-gradient(270deg,#0b4198 0,#032727) */
+.btn-my {
+  background: linear-gradient(270deg, #007bff, #07efef);
+  padding: 5px;
+  color: #fff;
+  display: grid;
+  text-align: center;
+  margin-top: 15px;
+  box-shadow: 2px 1px 1px #55555559;
+}
+.btn-my:hover {
+  text-decoration: none;
+  color: black;
+  background: #fff;
+}
+.user-table-item {
+  background: #ffffffc2;
+  padding: 10px 13px;
+  margin-top: 10px;
+  border-radius: 7px;
+  box-shadow: 1px 1px 1px #00000014;
+}
+.user-table-header {
+  padding: 8px 15px;
+}
+p.sent {
+  margin-bottom: 0;
+  background: #dab907a3;
+  width: 50px;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+}
+h4.invoicesx {
+  border-bottom: 3px solid #dc3545;
+  width: 15rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  padding: 5px 0;
+  font-weight: 500;
+}
+h4.invoices {
+  border-bottom: 3px solid #5fcbc6;
+  width: 13rem;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  padding: 9px 0;
+  font-weight: 500;
 }
