@@ -89,13 +89,19 @@ class InvoicePrepend extends React.Component {
                   <small className="text-danger">{errors.email}</small>
                 )}
               </p>
-              <a className="btn-my" href="#!" onClick={this.handleSubmit}>
-                Send Invoice
-              </a>
             </form>
-            <Link to="/createinvoice" className="btn-my">
-              Add More Item
-            </Link>
+            <div className="row">
+              <div className="col">
+                <a className="btn-my" href="#!" onClick={this.handleSubmit}>
+                  Send Invoice
+                </a>
+              </div>
+              <div>
+                <Link to="/createinvoice" className="btn-my">
+                  Add More Item
+                </Link>
+              </div>
+            </div>
           </div>
         )}
       </div>
