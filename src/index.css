@@ -70,3 +70,6 @@ h4.invoices {
   padding: 9px 0;
   font-weight: 500;
 }
+.user-table-header span {
+  text-transform: uppercase;
+}
